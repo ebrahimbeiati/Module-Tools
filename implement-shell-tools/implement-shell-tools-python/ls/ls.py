@@ -20,6 +20,9 @@ def list_directory(path, show_all):
 def main():
     parser = argparse.ArgumentParser(description="List directory contents")
     parser.add_argument("-a", "--all", action="store_true", help="show hidden files")
+    parser.add_argument(
+        "-1", dest="one", action="store_true", help="one entry per line (default)"
+    )
     parser.add_argument("paths", nargs="*", default=["."], help="directories to list")
 
     args = parser.parse_args()
